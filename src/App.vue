@@ -1,11 +1,27 @@
-<script setup></script>
-
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <div>
+    <Navbar />
+    <CartDetail />
+
+    <section v-if="state.view === 'home'">
+      <Home />
+    </section>
+
+    <section v-else-if="state.view === 'cart'">
+      <CartTable />
+    </section>
+
+    <section v-else-if="state.view === 'login'">
+      <Login />
+    </section>
+  </div>
 </template>
 
-<style scoped></style>
+<script setup>
+import { state } from './state'
+import Navbar from './components/Navbar.vue'
+import CartDetail from './components/CartDetail.vue'
+import Home from './views/Home.vue'
+import Login from './views/Login.vue'
+
+</script>
