@@ -37,9 +37,26 @@
 
     <main class="container pb-5">
       <section v-if="state.view === 'home'">
-        <h5 class="h4 mb-3">Productos</h5>
-        <SearchBox v-model="state.search" placeholder="Buscar por nombre..." class="mb-3" />
-        <ProductList />
+        <section class="container py-5">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" id="mainTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="productos-tab" data-bs-toggle="tab" data-bs-target="#productos"
+                type="button" role="tab" aria-controls="productos" aria-selected="true">
+                Productos
+              </button>
+            </li>
+          </ul>
+          <div class="my-4 card p-3">
+            <h5 class="card-title">Filtros de Búsqueda</h5>
+            <SearchBox v-model="state.search" placeholder="Buscar por nombre..." class="mb-3" />
+          </div>
+          <ProductList />
+        </section>
+      </section>
+
+      <section v-else-if="state.view === 'login'">
+        <LoginForm />
       </section>
 
       <section v-else-if="state.view === 'cart'">
