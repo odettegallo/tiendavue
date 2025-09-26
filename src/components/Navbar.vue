@@ -14,7 +14,7 @@
             <a class="nav-link" href="#" @click.prevent="go('cart')">Carrito ({{ cartCount }})</a>
           </li>
         </ul>
-        <div class="d-flex align-items-center gap-2 ms-auto">
+        <div class="d-flex align-items-center gap-2">
           <span v-if="state.user">Hola, {{ state.user.name || state.user.email }}</span>
           <a v-if="!state.user" class="btn btn-outline-primary btn-sm" href="#" @click.prevent="go('login')">Iniciar sesión</a>
           <button v-else class="btn btn-outline-secondary btn-sm" @click="logout">Cerrar sesión</button>
