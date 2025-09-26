@@ -1,7 +1,6 @@
 <template>
   <div>
     <Navbar />
-    <CartDetail />
 
     <section v-if="state.view === 'home'">
       <Home />
