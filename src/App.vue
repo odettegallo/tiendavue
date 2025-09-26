@@ -1,11 +1,28 @@
-<script setup></script>
-
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <div>
+    <Navbar />
+    <div style="height: 56px;"></div> <!-- Espacio para la barra de navegación fija -->
+    <section v-if="state.view === 'home'">
+      <Home />
+    </section>
+
+    <section v-else-if="state.view === 'cart'">
+      <CartDetail />
+    </section>
+
+    <section v-else-if="state.view === 'login'">
+      <Login />
+    </section>
+    <Footer :class="{'fixed-bottom': state.view === 'cart'}" />
+  </div>
 </template>
 
-<style scoped></style>
+<script setup>
+import { state } from './state'
+import Navbar from './components/Navbar.vue'
+import CartDetail from './components/CartDetail.vue'
+import Footer from './components/Footer.vue'
+import Home from './views/Home.vue'
+import Login from './views/Login.vue'
+
+</script>
