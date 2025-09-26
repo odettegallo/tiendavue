@@ -107,6 +107,8 @@ export const actions = {
     state.loadingProducts = true
     try {
       alert('Estamos procesando tu compra...')
+      if (!state.user) throw new Error('Debes iniciar sesión para realizar la compra.')
+      if (state.items.length === 0) throw new Error('Tu carrito está vacío.')
 
       // Se simula la verificación y el descuento de stock en el "servidor"
       await checkStockAndDecrement(state.items)

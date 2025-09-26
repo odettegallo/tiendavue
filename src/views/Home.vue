@@ -1,5 +1,13 @@
 <template>
   <div>
+    <header class="hero bg-primary text-white text-center py-5">
+      <div class="container">
+        <h1 class="hero__title">Explora nuestra tienda de tecnología</h1>
+        <p class="hero__subtitle">
+          Descubre gadgets y accesorios con la mejor calidad y precio.
+        </p>
+      </div>
+    </header>
     <div>
       <div class="modal fade" id="productDetailModal" tabindex="-1" aria-labelledby="productDetailModalLabel"
         aria-hidden="true">
@@ -29,7 +37,7 @@
 
     <main class="container pb-5">
       <section v-if="state.view === 'home'">
-        <h1 class="h4 mb-3">Productos</h1>
+        <h5 class="h4 mb-3">Productos</h5>
         <SearchBox v-model="state.search" placeholder="Buscar por nombre..." class="mb-3" />
         <ProductList />
       </section>
