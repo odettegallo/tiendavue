@@ -63,7 +63,6 @@
         <h1 class="h4 mb-3">Carrito</h1>
         <CartTable />
       </section>
-
     </main>
   </div>
 </template>
