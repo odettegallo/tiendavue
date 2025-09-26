@@ -51,7 +51,7 @@
             <h5 class="card-title">Filtros de Búsqueda</h5>
             <SearchBox v-model="state.search" placeholder="Buscar por nombre..." class="mb-3" />
           </div>
-          <ProductList />
+          <Products />
         </section>
       </section>
 
@@ -72,9 +72,9 @@
 import { computed } from 'vue'
 import { state, actions } from '../state'
 import SearchBox from '../components/SearchBox.vue'
-import ProductList from '../components/ProductList.vue'
 import CartTable from '../components/CartDetail.vue'
 import LoginForm from './Login.vue'
+import Products from '@/components/Products.vue'
 
 const cartCount = computed(() => state.items.reduce((a, it) => a + it.qty, 0))
 const go = actions.go
