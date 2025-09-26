@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navbar />
-
+    <div style="height: 56px;"></div> <!-- Espacio para la barra de navegación fija -->
     <section v-if="state.view === 'home'">
       <Home />
     </section>
