@@ -9,10 +9,15 @@ const routes = [
     name: 'Home',
     component: Home,
   },
-   {
+  {
     path: '/login',
     name: 'Login',
     component: Login,
+  },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: () => import('../components/CartDetail.vue'),
   },
   {
     path: '/:pathMatch(.*)*',
@@ -23,7 +28,7 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [],
+  routes,
 })
 
 export default router

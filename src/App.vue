@@ -8,7 +8,7 @@
     </section>
 
     <section v-else-if="state.view === 'cart'">
-      <CartTable />
+      <CartDetail />
     </section>
 
     <section v-else-if="state.view === 'login'">
